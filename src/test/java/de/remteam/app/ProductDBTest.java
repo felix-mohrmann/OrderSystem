@@ -11,7 +11,7 @@ class ProductDBTest {
 
 
     @Test
-    public void testWithAfterDBInit() {
+    public void testAfterDBInit() {
         // Given
         ProductDB productDB = new ProductDB();
 
@@ -53,7 +53,8 @@ class ProductDBTest {
 
         // When
         Optional<Product> product = productDB.getProductByID(5);
-        boolean actual = product.isPresent();
-        assertFalse(actual);
+
+        //Then
+        assertFalse(product.isPresent());
     }
 }
