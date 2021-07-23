@@ -35,9 +35,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "de.remteam.app.Product{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                '}';
+        return name;
     }
 }

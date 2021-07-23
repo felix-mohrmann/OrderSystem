@@ -7,10 +7,10 @@ public class ProductDB {
     private final Map<Integer, Product> productsDB = new HashMap<>();
 
     public ProductDB() {
-        Product facebook = new Product("facebook", 1);
-        Product amazon = new Product("amazon", 2);
-        Product netflix = new Product("netflix", 3);
-        Product google = new Product("google", 4);
+        Product facebook = new Product("Facebook", 1);
+        Product amazon = new Product("Amazon", 2);
+        Product netflix = new Product("Netflix", 3);
+        Product google = new Product("Google", 4);
         add(facebook);
         add(amazon);
         add(netflix);
@@ -30,6 +30,11 @@ public class ProductDB {
             return Optional.of(productsDB.get(whichID));
         }
         return Optional.empty();
+    }
+
+    @Override
+    public String toString() {
+        return "Unser Sortiment an Top Software: "+productsDB;
     }
 }
 

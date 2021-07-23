@@ -34,4 +34,9 @@ public class Order {
     public int hashCode() {
         return Objects.hash(id, orderedProducts);
     }
+
+    @Override
+    public String toString() {
+        return "ID= "+id+" Bestellte Produkte= "+orderedProducts;
+    }
 }

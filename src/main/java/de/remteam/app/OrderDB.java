@@ -24,4 +24,8 @@ public class OrderDB {
         orderDB.put(id, order);
     }
 
+    @Override
+    public String toString() {
+        return "Aktuelle Bestellungen: "+orderDB;
+    }
 }
