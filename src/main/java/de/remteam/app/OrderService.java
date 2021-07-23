@@ -4,12 +4,14 @@ import java.util.List;
 
 public class OrderService {
 
-    public static void addOrder(OrderDB currentOrderDB, List<Product> einkaufswagen) {
-        currentOrderDB.addOrder(einkaufswagen);
+    private OrderDB ourOrderDB = new OrderDB();
+
+    public void addOrder(List<Product> einkaufswagen) {
+        addOrder(einkaufswagen);
     }
 
-    public static List<Order> listOrders(OrderDB currentOrderDB) {
-        return currentOrderDB.listOfAllOrders();
+    public List<Order> listOrders() {
+        return ourOrderDB.listOfAllOrders();
     }
 
 }

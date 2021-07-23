@@ -6,7 +6,7 @@ import java.util.List;
 public class AppMain {
 
     public static void main(String[] args) {
-        OrderDB ourOrderDB = new OrderDB();
+        OrderService orderService = new OrderService();
         ProductDB ourProductDB = new ProductDB();
         List<Product> einkaufswaagen = new ArrayList<>();
         List<Product> verkaufsregal = ourProductDB.listOfAllProducts();
@@ -25,8 +25,7 @@ public class AppMain {
             System.out.println("Diese Produkte sind nicht verfügbar");
         }
 
-        OrderService.addOrder(ourOrderDB,einkaufswaagen);
-        System.out.println(ourOrderDB);
+        orderService.addOrder(einkaufswaagen);
         System.out.println(ourProductDB);
     }
 

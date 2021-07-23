@@ -7,10 +7,10 @@ public class ProductDB {
     private final Map<Integer, Product> productsDB = new HashMap<>();
 
     public ProductDB() {
-        Product facebook = new Product("Facebook", 1);
-        Product amazon = new Product("Amazon", 2);
-        Product netflix = new Product("Netflix", 3);
-        Product google = new Product("Google", 4);
+        Product facebook = new Software("Facebook", 1);
+        Product amazon = new Software("Amazon", 2);
+        Product netflix = new Software("Netflix", 3);
+        Product google = new Hardware("Google", 4);
         add(facebook);
         add(amazon);
         add(netflix);
