@@ -20,10 +20,10 @@ class ProductDBTest {
 
         //Then
         List<Product> expected = List.of(
-                new Product("facebook", 1),
-                new Product("amazon", 2),
-                new Product("netflix", 3),
-                new Product("google", 4)
+                new Product("Facebook", 1),
+                new Product("Amazon", 2),
+                new Product("Netflix", 3),
+                new Product("Google", 4)
         );
         assertEquals(expected, actual);
     }
@@ -39,7 +39,7 @@ class ProductDBTest {
         if(product.isPresent()){
             actual = product.get();
             // Then
-            Product expected = new Product("amazon", 2);
+            Product expected = new Product("Amazon", 2);
             assertEquals(expected, actual);
         } else {
             fail("no Product found by ID returned optional was empty");
