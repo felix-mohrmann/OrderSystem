@@ -10,8 +10,21 @@ public class AppMain {
         ProductDB ourProductDB = new ProductDB();
         List<Product> einkaufswaagen = new ArrayList<>();
         List<Product> verkaufsregal = ourProductDB.listOfAllProducts();
-        einkaufswaagen.add(verkaufsregal.get(0));
-        einkaufswaagen.add(verkaufsregal.get(3));
+
+        try{
+            einkaufswaagen.add(verkaufsregal.get(0));
+            einkaufswaagen.add(verkaufsregal.get(3));
+        } catch (RuntimeException e){
+            System.out.println("Diese Produkte sind nicht verfügbar");
+        }
+
+        try {
+            einkaufswaagen.add(verkaufsregal.get(9));
+
+        } catch (RuntimeException e){
+            System.out.println("Diese Produkte sind nicht verfügbar");
+        }
+
         OrderService.addOrder(ourOrderDB,einkaufswaagen);
         System.out.println(ourOrderDB);
         System.out.println(ourProductDB);
