@@ -1,3 +1,5 @@
+package de.remteam.app;
+
 import java.util.Objects;
 
 public class Product {
@@ -33,7 +35,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "de.remteam.app.Product{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 '}';
