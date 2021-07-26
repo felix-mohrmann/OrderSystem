@@ -8,4 +8,7 @@ public interface Product {
 
     public int getId();
 
+    public int getStock();
+
+    public void addToStock(int stockEntrance);
 }

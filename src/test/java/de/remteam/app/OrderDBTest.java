@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,11 +28,11 @@ class OrderDBTest {
     public void testGetOrderById(){
         // Given
         OrderDB orderDB = new OrderDB();
-        List<Product> products = List.of(
-                new Product("facebook", 1),
-                new Product("amazon", 2),
-                new Product("netflix", 3),
-                new Product("google", 4)
+        Map<Product, Integer> products = Map.of(
+                new Software("facebook", 1), 1,
+                new Software("amazon", 2), 1,
+                new Software("netflix", 3), 1,
+                new Software("google", 4), 1
         );
         orderDB.addOrder(products);
 
@@ -41,11 +42,11 @@ class OrderDBTest {
         if(order.isPresent()){
             actual = order.get();
             // Then
-            Order expected = new Order(1, List.of(
-                    new Product("facebook", 1),
-                    new Product("amazon", 2),
-                    new Product("netflix", 3),
-                    new Product("google", 4)
+            Order expected = new Order(1, Map.of(
+                    new Software("facebook", 1), 1,
+                    new Software("amazon", 2), 1,
+                    new Software("netflix", 3), 1,
+                    new Software("google", 4), 1
             ));
             assertEquals(expected, actual);
         } else {
@@ -57,11 +58,11 @@ class OrderDBTest {
     public void testInvalidOrderId(){
         // Given
         OrderDB orderDB = new OrderDB();
-        List<Product> products = List.of(
-                new Product("facebook", 1),
-                new Product("amazon", 2),
-                new Product("netflix", 3),
-                new Product("google", 4)
+        Map<Product, Integer> products = Map.of(
+                new Software("facebook", 1), 1,
+                new Software("amazon", 2), 1,
+                new Software("netflix", 3), 1,
+                new Software("google", 4), 1
         );
         orderDB.addOrder(products);
 

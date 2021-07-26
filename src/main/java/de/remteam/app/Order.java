@@ -1,15 +1,13 @@
 package de.remteam.app;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Order {
 
     private final int id;
-    private List<Product> orderedProducts = new ArrayList<>();
+    private Map<Product, Integer> orderedProducts = new HashMap<>();
 
-    public Order(int id, List<Product> orderedProducts) {
+    public Order(int id, Map<Product, Integer> orderedProducts) {
         this.id = id;
         this.orderedProducts = orderedProducts;
     }
@@ -19,7 +17,7 @@ public class Order {
     }
 
     public List<Product> getOrderedProducts() {
-        return orderedProducts;
+        return (List) orderedProducts;
     }
 
     @Override

@@ -20,26 +20,25 @@ class ProductDBTest {
 
         //Then
         List<Product> expected = List.of(
-                new Product("Facebook", 1),
-                new Product("Amazon", 2),
-                new Product("Netflix", 3),
-                new Product("Google", 4)
+                new Software("Facebook", 1),
+                new Software("Amazon", 2),
+                new Software("Netflix", 3),
+                new Software("Google", 4)
         );
-        assertEquals(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
 
     @Test
-    public void testGetProductById(){
+    public void testGetProductById() {
         // Given
         ProductDB productDB = new ProductDB();
 
         // When
         Optional<Product> product = productDB.getProductByID(2);
-        Product actual;
-        if(product.isPresent()){
-            actual = product.get();
+        if (product.isPresent()) {
+            Product actual = product.get();
             // Then
-            Product expected = new Product("Amazon", 2);
+            Product expected = new Software("Amazon", 2);
             assertEquals(expected, actual);
         } else {
             fail("no Product found by ID returned optional was empty");
@@ -47,7 +46,7 @@ class ProductDBTest {
     }
 
     @Test
-    public void testGetProductByInvalidId(){
+    public void testGetProductByInvalidId() {
         // Given
         ProductDB productDB = new ProductDB();
 

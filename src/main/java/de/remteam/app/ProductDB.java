@@ -10,15 +10,20 @@ public class ProductDB {
         Product facebook = new Software("Facebook", 1);
         Product amazon = new Software("Amazon", 2);
         Product netflix = new Software("Netflix", 3);
-        Product google = new Hardware("Google", 4);
+        Product google = new Software("Google", 4);
         add(facebook);
         add(amazon);
         add(netflix);
         add(google);
+        facebook.addToStock(10);
+        amazon.addToStock(10);
+        netflix.addToStock(10);
+        google.addToStock(10);
     }
 
     private void add(Product whichProduct){
-        productsDB.put(whichProduct.getId(),whichProduct);
+        productsDB.put(whichProduct.getId(), whichProduct);
+
     }
 
     public List<Product> listOfAllProducts (){

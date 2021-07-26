@@ -17,7 +17,7 @@ public class OrderDB {
         return Optional.empty();
     }
 
-    public void addOrder(List<Product> products){
+    public void addOrder(Map<Product, Integer> products){
         int id = orderDB.size() +1;
 
         Order order = new Order(id, products);
@@ -26,6 +26,6 @@ public class OrderDB {
 
     @Override
     public String toString() {
-        return "Aktuelle Bestellungen: "+orderDB;
+        return "Aktuelle Bestellungen: " + orderDB;
     }
 }

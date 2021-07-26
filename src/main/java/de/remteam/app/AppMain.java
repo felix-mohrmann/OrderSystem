@@ -1,32 +1,34 @@
 package de.remteam.app;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AppMain {
 
     public static void main(String[] args) {
         OrderService orderService = new OrderService();
         ProductDB ourProductDB = new ProductDB();
-        List<Product> einkaufswaagen = new ArrayList<>();
+        Map<Product, Integer> einkaufswaagen = new HashMap<>();
         List<Product> verkaufsregal = ourProductDB.listOfAllProducts();
 
         try{
-            einkaufswaagen.add(verkaufsregal.get(0));
-            einkaufswaagen.add(verkaufsregal.get(3));
+            einkaufswaagen.put(verkaufsregal.get(0), 2);
+            einkaufswaagen.put(verkaufsregal.get(3), 1);
         } catch (RuntimeException e){
             System.out.println("Diese Produkte sind nicht verfügbar");
         }
 
         try {
-            einkaufswaagen.add(verkaufsregal.get(9));
+            einkaufswaagen.put(verkaufsregal.get(9), 1);
 
         } catch (RuntimeException e){
             System.out.println("Diese Produkte sind nicht verfügbar");
         }
 
         orderService.addOrder(einkaufswaagen);
+        System.out.println(orderService.listOrders());
         System.out.println(ourProductDB);
     }
-
 }
